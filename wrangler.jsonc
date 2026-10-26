@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shristifurniture-web",
+  "compatibility_date": "2026-10-01",
+  // Static site only: every file under public/ is served as-is, no Worker script.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  // Cloudflare runs `wrangler preview` for non-main branches; it requires this block (empty is fine).
+  "previews": {},
+  // Gives each branch preview a <branch>-shristifurniture-web.<subdomain>.workers.dev URL.
+  "preview_urls": true
+}
