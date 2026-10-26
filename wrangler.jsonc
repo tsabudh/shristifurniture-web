@@ -6,5 +6,7 @@
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
-  }
+  },
+  // Cloudflare runs `wrangler preview` for non-main branches; it requires this block (empty is fine).
+  "previews": {}
 }
