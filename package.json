@@ -4,9 +4,14 @@
   "scripts": {
     "dev": "wrangler dev",
     "check": "wrangler deploy --dry-run",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "build:models": "node scripts/build-models.mjs"
   },
   "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@google/model-viewer": "4.4.0",
+    "jpeg-js": "0.4.4",
+    "three": "0.183.2",
     "wrangler": "4.152.0"
   }
 }

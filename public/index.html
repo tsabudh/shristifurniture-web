@@ -3,143 +3,326 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shristi Furniture — Quality furniture for every home</title>
-  <meta name="description" content="Shristi Furniture: beds, sofas, dining sets, wardrobes and office furniture. Visit our showroom or call us for custom orders.">
+  <title>Shristi Furniture — Wardrobes, dining sets, sofas and beds</title>
+  <meta name="description" content="Shristi Furniture makes wardrobes, dining sets, sofas, beds and desks to your measurements. Turn every piece around in 3D and see it in your room.">
   <meta property="og:title" content="Shristi Furniture">
-  <meta property="og:description" content="Beds, sofas, dining sets, wardrobes and office furniture — made to last.">
+  <meta property="og:description" content="Wardrobes, dining sets, sofas and beds, made to measure. See every piece in 3D.">
   <meta property="og:url" content="https://shristifurniture.com.np/">
   <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f5f5f7">
   <link rel="canonical" href="https://shristifurniture.com.np/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/vendor/model-viewer.min.js"></script>
+  <script type="module" src="/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
+  <header class="globalnav">
+    <div class="globalnav-inner">
       <a class="brand" href="/" aria-label="Shristi Furniture home">
-        <img src="/favicon.svg" alt="" width="32" height="32">
+        <img src="/favicon.svg" alt="" width="22" height="22">
         <span>Shristi Furniture</span>
       </a>
       <nav aria-label="Main">
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#pieces">Pieces</a>
+        <a href="#why">Why Shristi</a>
+        <a href="#visit">Visit</a>
       </nav>
     </div>
   </header>
 
+  <nav class="chapternav" aria-label="Furniture">
+    <ul>
+      <li><a href="#dining-set"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20h32M13 20v16m22-16v16M3 24v14m0-6h6M45 24v14m0-6h-6"/></svg>Dining</a></li>
+      <li><a href="#sofa"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 22v-4a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v4M6 22a3 3 0 0 1 3 3v5h30v-5a3 3 0 1 1 3 3v6H6v-6a3 3 0 0 1 0-6zM10 36v3m28-3v3"/></svg>Sofas</a></li>
+      <li><a href="#wardrobe"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 5h24v34H12zM24 5v34M20 20v5m8-5v5M14 39v4m20-4v4"/></svg>Wardrobes</a></li>
+      <li><a href="#bed"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34V14m0 12h36v8M6 26v-4a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v4"/></svg>Beds</a></li>
+      <li><a href="#study-desk"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 18h40M8 18v20m32-20v20M28 18v20h12M28 28h12"/></svg>Desks</a></li>
+      <li><a href="#bookshelf"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 4h24v40H12zM12 14h24M12 24h24M12 34h24M17 8v6m4-4v4m6 6v4m4-5v5"/></svg>Shelves</a></li>
+      <li><a href="#pieces"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 22h36v4H6zM10 26v12m28-12v12M10 34h28"/></svg>Tables</a></li>
+      <li><a href="#pieces"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 4v40M15 26h19v18M15 9h3m-3 6h3m-3 6h3"/></svg>Chairs</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Furniture showroom</p>
-        <h1>Furniture that makes a house feel like home</h1>
+    <section class="intro">
+      <div class="wrap intro-inner">
+        <h1>Shristi Furniture</h1>
         <!-- TODO(owner): replace with the shop's own tagline. -->
-        <p class="lede">Solid, well-made beds, sofas, dining sets and wardrobes — ready-made or built to your measurements.</p>
-        <div class="cta-row">
-          <!-- TODO(owner): real phone number in both href and text. -->
-          <a class="btn btn-primary" href="tel:+9779800000000">Call us</a>
-          <!-- TODO(owner): real WhatsApp number, digits only with country code. -->
-          <a class="btn btn-secondary" href="https://wa.me/9779800000000" rel="noopener">WhatsApp</a>
+        <p>Made to measure, built from seasoned wood. <a href="#visit">Visit the showroom&nbsp;›</a></p>
+      </div>
+    </section>
+
+    <!-- Product tiles. Data attributes on the tiles and in #pieces drive main.js. -->
+    <section class="tile tile-dark" id="dining-set" aria-labelledby="t-dining">
+      <model-viewer class="tile-model" src="/models/dining-set.glb" alt="3D model of a six-seater teak dining set, slowly turning" camera-controls disable-zoom disable-pan touch-action="pan-y" auto-rotate rotation-per-second="10deg" auto-rotate-delay="0" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" exposure="1.1" camera-orbit="30deg 66deg 112%" interaction-prompt="none"></model-viewer>
+      <div class="tile-copy">
+        <div>
+          <h2 id="t-dining">Dining Set</h2>
+          <p class="tile-tagline">Six seats. One table. Every evening together.</p>
+          <p class="tile-meta">Solid teak · table 180 × 90 cm</p>
+        </div>
+        <div class="tile-actions">
+          <button type="button" class="btn btn-primary" data-open="dining-set">View in 3D</button>
+          <a class="btn btn-ghost" data-enquire="dining-set" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
         </div>
       </div>
     </section>
 
-    <section id="products" class="section">
+    <section class="tile tile-light" id="sofa" aria-labelledby="t-sofa">
+      <model-viewer class="tile-model" src="/models/sofa.glb" alt="3D model of a three-seater sofa in oatmeal fabric" camera-controls disable-zoom disable-pan touch-action="pan-y" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" camera-orbit="22deg 76deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
+      <div class="tile-copy">
+        <div>
+          <h2 id="t-sofa">Sofa</h2>
+          <p class="tile-tagline">Sink in. Stay a while.</p>
+          <p class="tile-meta">Three seats · four fabric colours</p>
+        </div>
+        <div class="tile-actions">
+          <button type="button" class="btn btn-primary" data-open="sofa">View in 3D</button>
+          <a class="btn btn-ghost" data-enquire="sofa" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tile tile-sand" id="wardrobe" aria-labelledby="t-wardrobe">
+      <p class="tile-word" aria-hidden="true">Wardrobe</p>
+      <model-viewer class="tile-model" src="/models/wardrobe.glb" alt="3D model of a two-door walnut wardrobe" camera-controls disable-zoom disable-pan touch-action="pan-y" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" camera-orbit="18deg 84deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
+      <div class="tile-copy">
+        <div>
+          <h2 id="t-wardrobe" class="visually-hidden">Wardrobe</h2>
+          <p class="tile-tagline">Room for everything. Made to fit your wall.</p>
+          <p class="tile-meta">Two doors · 6 ft tall · walnut</p>
+        </div>
+        <div class="tile-actions">
+          <button type="button" class="btn btn-primary" data-open="wardrobe">View in 3D</button>
+          <a class="btn btn-ghost" data-enquire="wardrobe" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tile tile-night" id="bed" aria-labelledby="t-bed">
+      <model-viewer class="tile-model" src="/models/bed.glb" alt="3D model of a queen bed with a padded headboard" camera-controls disable-zoom disable-pan touch-action="pan-y" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" exposure="1.1" camera-orbit="38deg 66deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
+      <div class="tile-copy">
+        <div>
+          <h2 id="t-bed">Bed</h2>
+          <p class="tile-tagline">Rest on something solid.</p>
+          <p class="tile-meta">Queen size · padded headboard</p>
+        </div>
+        <div class="tile-actions">
+          <button type="button" class="btn btn-primary" data-open="bed">View in 3D</button>
+          <a class="btn btn-ghost" data-enquire="bed" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="tile-pair">
+      <section class="tile tile-light tile-half" id="study-desk" aria-labelledby="t-desk">
+        <model-viewer class="tile-model" src="/models/study-desk.glb" alt="3D model of a study desk with three drawers" camera-controls disable-zoom disable-pan touch-action="pan-y" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" camera-orbit="25deg 72deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
+        <div class="tile-copy">
+          <div>
+            <h2 id="t-desk">Study Desk</h2>
+            <p class="tile-tagline">Room to think.</p>
+          </div>
+          <div class="tile-actions">
+            <button type="button" class="btn btn-primary" data-open="study-desk">View in 3D</button>
+            <a class="btn btn-ghost" data-enquire="study-desk" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
+          </div>
+        </div>
+      </section>
+      <section class="tile tile-light tile-half" id="bookshelf" aria-labelledby="t-shelf">
+        <model-viewer class="tile-model" src="/models/bookshelf.glb" alt="3D model of a five-shelf bookshelf" camera-controls disable-zoom disable-pan touch-action="pan-y" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" camera-orbit="20deg 82deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
+        <div class="tile-copy">
+          <div>
+            <h2 id="t-shelf">Bookshelf</h2>
+            <p class="tile-tagline">Every story in its place.</p>
+          </div>
+          <div class="tile-actions">
+            <button type="button" class="btn btn-primary" data-open="bookshelf">View in 3D</button>
+            <a class="btn btn-ghost" data-enquire="bookshelf" href="https://wa.me/9779800000000" rel="noopener">Enquire</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="compare" id="pieces" aria-labelledby="compare-title">
       <div class="wrap">
-        <h2>What we make</h2>
-        <p class="section-lede">Visit the showroom to see the full range, or ask us about custom sizes and finishes.</p>
-        <!-- TODO(owner): confirm categories; add photos to public/images/ and swap the icons for <img>. -->
-        <ul class="cards">
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34V14m0 12h36v8M6 26v-4a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v4"/></svg>
-            <h3>Beds</h3>
-            <p>Single, double and king beds, with or without storage.</p>
+        <h2 id="compare-title" class="section-title">Explore every piece.</h2>
+        <!-- TODO(owner): made-to-order designs at standard sizes; adjust to the real range. -->
+        <ul class="pieces">
+          <li class="piece" data-id="wardrobe" data-material="Wood" data-finish="Walnut">
+            <model-viewer src="/models/wardrobe.glb" alt="" camera-orbit="18deg 84deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Wardrobe</h3>
+            <p class="desc">Two doors, full-height storage and matte-black bar handles.</p>
+            <p class="dims">93 × 58 × 183 cm</p>
+            <button type="button" class="link" data-open="wardrobe">View in 3D ›</button>
           </li>
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 22v-4a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v4M6 22a3 3 0 0 1 3 3v5h30v-5a3 3 0 1 1 3 3v6H6v-6a3 3 0 0 1 0-6zM10 36v3m28-3v3"/></svg>
-            <h3>Sofas</h3>
-            <p>Sofa sets and corner sofas in fabric or leatherette.</p>
+          <li class="piece" data-id="dining-set" data-material="Wood" data-finish="Teak">
+            <model-viewer src="/models/dining-set.glb" alt="" camera-orbit="30deg 62deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Dining Set</h3>
+            <p class="desc">A six-seater table with six matching chairs with padded seats.</p>
+            <p class="dims">Table 180 × 90 × 76 cm</p>
+            <button type="button" class="link" data-open="dining-set">View in 3D ›</button>
           </li>
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20h36M12 20v18m24-18v18M16 12h16"/></svg>
-            <h3>Dining sets</h3>
-            <p>Four, six and eight-seater tables with matching chairs.</p>
+          <li class="piece" data-id="sofa" data-material="Fabric" data-finish="Oatmeal">
+            <model-viewer src="/models/sofa.glb" alt="" camera-orbit="22deg 76deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Fabric"></div>
+            <h3>Sofa</h3>
+            <p class="desc">Three seats, deep cushions and tapered wooden legs.</p>
+            <p class="dims">200 × 88 × 82 cm</p>
+            <button type="button" class="link" data-open="sofa">View in 3D ›</button>
           </li>
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 6h28v34H10zM24 6v34m-4-18v4m8-4v4M12 40v3m24-3v3"/></svg>
-            <h3>Wardrobes</h3>
-            <p>Two and three-door wardrobes, made to fit your room.</p>
+          <li class="piece" data-id="bed" data-material="Wood" data-finish="Walnut">
+            <model-viewer src="/models/bed.glb" alt="" camera-orbit="38deg 66deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Bed</h3>
+            <p class="desc">Queen size for a 5 × 6.5 ft mattress, with a padded headboard.</p>
+            <p class="dims">160 × 206 × 105 cm</p>
+            <button type="button" class="link" data-open="bed">View in 3D ›</button>
           </li>
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 18h40M8 18v20m32-20v20M28 18v20h12M28 28h12"/></svg>
-            <h3>Office furniture</h3>
-            <p>Desks, chairs and shelving for homes and offices.</p>
+          <li class="piece" data-id="study-desk" data-material="Wood" data-finish="Natural oak">
+            <model-viewer src="/models/study-desk.glb" alt="" camera-orbit="25deg 72deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Study Desk</h3>
+            <p class="desc">Three drawers on one side, open legroom on the other.</p>
+            <p class="dims">120 × 63 × 75 cm</p>
+            <button type="button" class="link" data-open="study-desk">View in 3D ›</button>
           </li>
-          <li class="card">
-            <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 8l10 10-20 20H10V28zM26 12l10 10"/></svg>
-            <h3>Custom orders</h3>
-            <p>Tell us the size and style — we build it to order.</p>
+          <li class="piece" data-id="bookshelf" data-material="Wood" data-finish="Natural oak">
+            <model-viewer src="/models/bookshelf.glb" alt="" camera-orbit="20deg 82deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Bookshelf</h3>
+            <p class="desc">Five open shelves on a recessed plinth.</p>
+            <p class="dims">80 × 30 × 180 cm</p>
+            <button type="button" class="link" data-open="bookshelf">View in 3D ›</button>
+          </li>
+          <li class="piece" data-id="coffee-table" data-material="Wood" data-finish="Walnut">
+            <model-viewer src="/models/coffee-table.glb" alt="" camera-orbit="30deg 62deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Coffee Table</h3>
+            <p class="desc">A low table with an undershelf for the everyday clutter.</p>
+            <p class="dims">110 × 60 × 45 cm</p>
+            <button type="button" class="link" data-open="coffee-table">View in 3D ›</button>
+          </li>
+          <li class="piece" data-id="dining-chair" data-material="Wood" data-finish="Teak">
+            <model-viewer src="/models/dining-chair.glb" alt="" camera-orbit="35deg 75deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <div class="dots" role="group" aria-label="Finish"></div>
+            <h3>Dining Chair</h3>
+            <p class="desc">Slatted back, padded seat. On its own or as extra seats.</p>
+            <p class="dims">44 × 46 × 92 cm · seat 45 cm</p>
+            <button type="button" class="link" data-open="dining-chair">View in 3D ›</button>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="about" class="section section-alt">
-      <div class="wrap">
-        <div class="about">
-          <h2>About us</h2>
-          <!-- TODO(owner): replace with the shop's real story (founding year, location, what sets it apart). -->
-          <p>Shristi Furniture makes and sells furniture for homes and offices. We use seasoned wood and sturdy hardware, and every piece is checked before it leaves the workshop.</p>
-          <ul class="points">
-            <li>Made-to-measure on request</li>
-            <li>Delivery and fitting available</li>
-            <li>Honest prices, no surprises</li>
-          </ul>
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="wrap why-head">
+        <h2 id="why-title" class="section-title">Get to know Shristi.</h2>
+        <div class="paddles">
+          <button type="button" class="paddle" data-scroll="-1" aria-label="Previous">‹</button>
+          <button type="button" class="paddle" data-scroll="1" aria-label="Next">›</button>
         </div>
+      </div>
+      <ul class="gallery" tabindex="0" aria-label="Why Shristi">
+        <li class="gcard">
+          <p class="eyebrow">Made to measure</p>
+          <h3>Your room.<br>Your size.</h3>
+          <div class="gvisual gvisual-measure" aria-hidden="true">
+            <model-viewer src="/models/wardrobe.glb" alt="" camera-orbit="0deg 88deg 108%" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            <span class="dim dim-w">93 cm</span>
+            <span class="dim dim-h">183 cm</span>
+          </div>
+        </li>
+        <li class="gcard">
+          <p class="eyebrow">See it at home</p>
+          <h3>Try it in your room before it arrives.</h3>
+          <div class="gvisual" aria-hidden="true">
+            <div class="phone">
+              <model-viewer src="/models/dining-chair.glb" alt="" camera-orbit="35deg 75deg auto" shadow-intensity="1" environment-image="neutral" interaction-prompt="none" loading="lazy"></model-viewer>
+            </div>
+          </div>
+        </li>
+        <li class="gcard">
+          <p class="eyebrow">Finishes</p>
+          <h3>Four woods.<br>One you'll love.</h3>
+          <div class="gvisual gvisual-woods" aria-hidden="true">
+            <span style="--c:#6b4430">Walnut</span>
+            <span style="--c:#a8723f">Teak</span>
+            <span style="--c:#d6b98c">Natural oak</span>
+            <span style="--c:#efe9e0">White wash</span>
+          </div>
+        </li>
+        <li class="gcard gcard-dark">
+          <p class="eyebrow">Seasoned wood</p>
+          <h3>Dried properly, so it stays straight.</h3>
+          <div class="gvisual gvisual-grain" aria-hidden="true"></div>
+        </li>
+        <li class="gcard">
+          <p class="eyebrow">Delivery and fitting</p>
+          <h3>We bring it.<br>We build it.</h3>
+          <div class="gvisual gvisual-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 48"><path d="M4 10h34v24H4zM38 18h12l8 9v7H38zM14 40a5 5 0 1 0 0-.1M48 40a5 5 0 1 0 0-.1M44 22h6l5 5"/></svg>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit-inner">
+        <div class="visit-copy">
+          <h2 id="visit-title">Visit the showroom.</h2>
+          <p>Sit on the sofas, open the drawers and bring your room measurements. We'll help you choose.</p>
+          <dl class="visit-list">
+            <!-- TODO(owner): real address, phone and opening hours. -->
+            <div><dt>Address</dt><dd>Address to be added</dd></div>
+            <div><dt>Hours</dt><dd>Sunday – Friday, 10:00 – 18:00</dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+9779800000000">+977 98XXXXXXXX</a></dd></div>
+          </dl>
+          <div class="tile-actions">
+            <!-- TODO(owner): Google Maps link. -->
+            <a class="btn btn-primary" href="https://maps.google.com/" rel="noopener">Get directions</a>
+            <a class="btn btn-ghost" href="https://wa.me/9779800000000" rel="noopener">WhatsApp us</a>
+          </div>
+        </div>
+        <model-viewer class="visit-model" src="/models/coffee-table.glb" alt="3D model of a walnut coffee table" auto-rotate rotation-per-second="14deg" auto-rotate-delay="0" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" camera-orbit="30deg 62deg auto" interaction-prompt="none" loading="lazy"></model-viewer>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="wrap">
-        <h2>Visit or contact us</h2>
-        <div class="contact-grid">
-          <dl class="contact-list">
-            <div>
-              <dt>Phone</dt>
-              <!-- TODO(owner): real phone number. -->
-              <dd><a href="tel:+9779800000000">+977 98XXXXXXXX</a></dd>
-            </div>
-            <div>
-              <dt>WhatsApp</dt>
-              <!-- TODO(owner): real WhatsApp number. -->
-              <dd><a href="https://wa.me/9779800000000" rel="noopener">Message us on WhatsApp</a></dd>
-            </div>
-            <div>
-              <dt>Showroom</dt>
-              <!-- TODO(owner): real address and Google Maps link. -->
-              <dd>Address to be added<br><a href="https://maps.google.com/" rel="noopener">Open in Google Maps</a></dd>
-            </div>
-            <div>
-              <dt>Opening hours</dt>
-              <!-- TODO(owner): real opening hours. -->
-              <dd>Sunday – Friday, 10:00 – 18:00</dd>
-            </div>
-          </dl>
-          <div class="contact-card">
-            <h3>Need something custom?</h3>
-            <p>Send us a photo or the measurements on WhatsApp and we'll reply with a price.</p>
-            <a class="btn btn-primary" href="https://wa.me/9779800000000" rel="noopener">Send on WhatsApp</a>
-          </div>
-        </div>
+    <section class="strip" aria-label="Services">
+      <div class="wrap strip-inner">
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30l24-24 12 12-24 24H6zM24 12l12 12M12 24l4 4m2-10 4 4m2-10 4 4"/></svg><h3>Made to measure</h3><p>Any size, any finish, built in our workshop.</p></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M3 12h26v18H3zM29 18h9l6 7v5H29zM11 36a4 4 0 1 0 0-.1M37 36a4 4 0 1 0 0-.1"/></svg><h3>Delivery and fitting</h3><p>We deliver and assemble it in your home.</p></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40l3-9a16 16 0 1 1 6 6zM18 18c0 6 6 12 12 12l3-3-4-3-2 2c-2-1-4-3-5-5l2-2-3-4z"/></svg><h3>Talk to us</h3><p><a href="https://wa.me/9779800000000" rel="noopener">Message us on WhatsApp ›</a></p></div>
+        <div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44s14-13 14-24a14 14 0 1 0-28 0c0 11 14 24 14 24zM24 25a5 5 0 1 0 0-.1"/></svg><h3>Visit us</h3><p><a href="#visit">Showroom hours and address ›</a></p></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="wrap">
-      <p>&copy; <span id="year">2026</span> Shristi Furniture</p>
+      <p>3D models show standard designs and sizes. Colours on screen are a guide; see the real finishes in the showroom.</p>
+      <p>&copy; <span id="year">2026</span> Shristi Furniture. All rights reserved.</p>
     </div>
   </footer>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <button type="button" class="viewer-close" aria-label="Close">×</button>
+    <model-viewer class="viewer-model" alt="" camera-controls touch-action="none" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" shadow-intensity="1.2" shadow-softness="0.9" environment-image="neutral" interaction-prompt="auto">
+      <button slot="ar-button" class="btn btn-primary ar-button">View in your room</button>
+    </model-viewer>
+    <div class="viewer-info">
+      <h2 id="viewer-title"></h2>
+      <p class="viewer-desc"></p>
+      <p class="viewer-dims"></p>
+      <p class="viewer-label">Finish: <strong class="viewer-finish"></strong></p>
+      <div class="swatches" role="group" aria-label="Finish"></div>
+      <p class="viewer-hint">Drag to turn. Pinch or scroll to zoom. On your phone, tap <strong>View in your room</strong> to place it at real size.</p>
+      <a class="btn btn-primary viewer-enquire" href="https://wa.me/9779800000000" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+  </dialog>
+
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
