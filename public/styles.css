@@ -1,0 +1,131 @@
+:root {
+  --bg: #faf7f2;
+  --bg-alt: #f1ebe1;
+  --surface: #ffffff;
+  --text: #2b2118;
+  --muted: #6b5d50;
+  --accent: #8a4b1f;
+  --accent-ink: #ffffff;
+  --border: #e3d9cb;
+  --radius: 12px;
+  --max: 1080px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
+h3 { font-size: 1.15rem; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(250, 247, 242, .92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; min-height: 60px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--text); text-decoration: none; font-weight: 700;
+}
+.site-header nav { display: flex; gap: 18px; }
+.site-header nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+.site-header nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding: 72px 0 64px; background: linear-gradient(180deg, var(--bg-alt), var(--bg)); }
+.eyebrow {
+  margin: 0 0 12px; color: var(--accent);
+  font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+}
+.lede { max-width: 38rem; color: var(--muted); font-size: 1.15rem; margin: 0 0 28px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 999px;
+  font-weight: 600; text-decoration: none; border: 2px solid var(--accent);
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: #6f3c18; border-color: #6f3c18; }
+.btn-secondary { background: transparent; color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: var(--accent-ink); }
+
+/* Sections */
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg-alt); }
+.section-lede { color: var(--muted); margin: 0 0 32px; max-width: 40rem; }
+
+.cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 16px;
+  /* 3 columns at full width so the 6 categories form two even rows. */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px;
+}
+.card p { margin: 0; color: var(--muted); font-size: .97rem; }
+.card-icon {
+  width: 44px; height: 44px; margin-bottom: 12px;
+  fill: none; stroke: var(--accent); stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.about { max-width: 46rem; }
+.points { padding-left: 1.2em; margin: 16px 0 0; }
+.points li { margin: 4px 0; }
+
+/* Contact */
+.contact-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+.contact-list { margin: 0; display: grid; gap: 18px; }
+.contact-list dt {
+  font-size: .8rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.contact-list dd { margin: 2px 0 0; }
+.contact-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; align-self: start;
+}
+.contact-card p { color: var(--muted); margin: 0 0 18px; }
+
+@media (min-width: 760px) {
+  .contact-grid { grid-template-columns: 1.2fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .site-header nav { gap: 12px; }
+  .site-header nav a { font-size: .875rem; }
+  .brand span { font-size: .95rem; }
+  .hero { padding: 48px 0 44px; }
+  .section { padding: 48px 0; }
+}
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: .9rem; }
+.site-footer p { margin: 0; }
+
+/* 404 */
+.not-found { min-height: 60vh; display: grid; place-content: center; text-align: center; padding: 48px 16px; }

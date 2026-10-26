@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shristifurniture.com.np/sitemap.xml
