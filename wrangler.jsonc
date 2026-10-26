@@ -8,5 +8,7 @@
     "not_found_handling": "404-page"
   },
   // Cloudflare runs `wrangler preview` for non-main branches; it requires this block (empty is fine).
-  "previews": {}
+  "previews": {},
+  // Gives each branch preview a <branch>-shristifurniture-web.<subdomain>.workers.dev URL.
+  "preview_urls": true
 }
