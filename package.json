@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "wrangler dev",
     "check": "wrangler deploy --dry-run",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "build": "node build/build.mjs",
+    "catalog": "bash build/catalog.sh"
   },
   "devDependencies": {
     "wrangler": "4.152.0"
